@@ -20,7 +20,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>mflood</groupId>
-    <artifactId>annual_collection</artifactId>
+    <artifactId>Annual_Collection</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>war</packaging>
     <name>WildFly Quickstarts: annual_collection</name>
