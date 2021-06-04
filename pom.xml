@@ -70,6 +70,13 @@
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
+			<dependency>
+				<groupId>org.jboss.arquillian</groupId>
+				<artifactId>arquillian-bom</artifactId>
+				<version>1.4.0.Final</version>
+				<scope>import</scope>
+				<type>pom</type>
+			</dependency>
 		</dependencies>
 	</dependencyManagement>
 
@@ -196,32 +203,33 @@
 		</dependency>
 
 		<dependency>
+			<groupId>org.jboss.arquillian.extension</groupId>
+			<artifactId>arquillian-jacoco</artifactId>
+			<version>1.0.0.Alpha6</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-java</artifactId>
 		</dependency>
 
 		<dependency>
-			<groupId>log4j</groupId>
-			<artifactId>log4j</artifactId>
-			<version>1.2.17</version>
+			<groupId>org.jboss.spec</groupId>
+			<artifactId>jboss-javaee-7.0</artifactId>
+			<version>1.0.3.Final</version>
+			<type>pom</type>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.jacoco</groupId>
+			<artifactId>org.jacoco.core</artifactId>
+			<version>0.7.6.201602180812</version>
+			<scope>test</scope>
 		</dependency>
 
 	</dependencies>
-
-	<reporting>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-pmd-plugin</artifactId>
-				<version>3.7</version>
-				<configuration>
-					<rulesets>
-						<ruleset>/pmd/ruleset/CDS_pmd_ruleset_jse-1.0.xml</ruleset>
-					</rulesets>
-				</configuration>
-			</plugin>
-		</plugins>
-	</reporting>
 
 	<build>
 		<!-- Maven will append the version to the finalName (which is the name 
@@ -286,29 +294,6 @@
 					</execution>
 				</executions>
 			</plugin>
-
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-site-plugin</artifactId>
-				<version>3.7.1</version>
-			</plugin>
-
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-project-info-reports-plugin</artifactId>
-				<version>3.0.0</version>
-			</plugin>
-
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-pmd-plugin</artifactId>
-				<configuration>
-					<rulesets>
-						<ruleset>
-							${basedir}/pmd/ruleset/CDS_pmd_ruleset_jse-1.0.xml</ruleset>
-					</rulesets>
-				</configuration>
-			</plugin>
 		</plugins>
 	</build>
 
@@ -359,27 +344,8 @@
 			<id>arq-wildfly-remote</id>
 			<dependencies>
 				<dependency>
-					<groupId>org.jboss.spec</groupId>
-					<artifactId>jboss-javaee-7.0</artifactId>
-					<version>1.0.0.Final</version>
-					<type>pom</type>
-					<scope>provided</scope>
-				</dependency>
-				<dependency>
 					<groupId>org.wildfly</groupId>
 					<artifactId>wildfly-arquillian-container-remote</artifactId>
-					<scope>test</scope>
-				</dependency>
-				<dependency>
-					<groupId>org.jboss.arquillian.extension</groupId>
-					<artifactId>arquillian-jacoco</artifactId>
-					<version>1.0.0.Alpha6</version>
-					<scope>test</scope>
-				</dependency>
-				<dependency>
-					<groupId>org.jacoco</groupId>
-					<artifactId>org.jacoco.core</artifactId>
-					<version>0.7.6.201602180812</version>
 					<scope>test</scope>
 				</dependency>
 			</dependencies>

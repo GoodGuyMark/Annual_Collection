@@ -2,15 +2,13 @@ package entities;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.Table;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.xml.bind.annotation.XmlRootElement;
 
-@Entity(name = "Annual")
-@Table(name = "Annual")
+@Entity
 @XmlRootElement
-public class Annual {
+public class Boys_Annuals_Pre1960 {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,6 +19,7 @@ public class Annual {
 	private String years_unpublished;
 	private String years_missing;
 	private String image;
+	
 	public int getId() {
 		return id;
 	}
